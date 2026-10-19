@@ -1,0 +1,21 @@
+SECUREMIND AI - HOW TO RUN
+==========================
+
+ON YOUR COMPUTER
+1. Get a FREE Groq key: https://console.groq.com/keys  (starts with gsk_)
+2. Open the .env file in Notepad. Write the key straight after the equals sign, no spaces, no quotes:
+      GROQ_API_KEY=gsk_yourkeyhere
+   Leave XAI_API_KEY empty (that line is only for a paid Grok key that starts with xai-).
+3. Save, then double-click start.bat. The app opens in your browser.
+
+GOING LIVE (Render, free)
+1. Unzip, then upload the files INSIDE the folder to a new GitHub repo.
+   Do NOT upload the .env file (it holds your key).
+2. render.com -> New + -> Web Service -> connect the repo.
+3. Build Command:  pip install -r requirements.txt
+   Start Command:  gunicorn server:app --timeout 120
+   Instance Type:  Free
+4. Environment Variables -> Add:  GROQ_API_KEY = your gsk_ key
+5. Deploy. When it says Live, open the link.
+
+Never share a screenshot or file that contains your key.
